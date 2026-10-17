@@ -1,0 +1,16 @@
+column,missing_values,missing_percent
+contract_number,0,0.0
+award_date,44,0.82
+start_date,98,1.83
+end_date,0,0.0
+contract_amount,696,12.99
+total_contract_value,0,0.0
+currency,0,0.0
+supplier_standardized,4428,82.67
+supplier_legal,1,0.02
+supplier_operating,4239,79.14
+procurement_category,0,0.0
+contracting_entity,0,0.0
+procurement_method,365,6.81
+item_description,5254,98.1
+supplier,0,0.0
