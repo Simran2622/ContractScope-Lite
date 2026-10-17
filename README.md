@@ -1,66 +1,64 @@
+@'
 # ContractScope Lite
-### Government Contract Analytics Dashboard
+### Canadian Government Contract Analytics Dashboard
 
 ## Overview
-ContractScope Lite is a data analytics project that analyses public Canadian government contract records to identify suppliers, procurement categories, procurement methods, and award years associated with the highest recorded contract values.
+ContractScope Lite analyses public Canadian government contract history data to explore suppliers, procurement categories, procurement methods, award years, and recorded contract values.
 
-The project demonstrates a complete data analytics workflow using Python, PostgreSQL, SQL, and Power BI.
+The project demonstrates an end-to-end analytics workflow using Python, PostgreSQL, SQL, and Power BI.
 
 ## Objectives
 - Analyse recorded contract values by supplier.
-- Identify procurement categories with the highest recorded values.
-- Compare recorded contract values across award years.
-- Analyse contract values by procurement method.
-- Perform data cleaning and data quality checks.
+- Compare recorded values across procurement categories and methods.
+- Explore contract values by award year.
+- Clean source data and report data-quality issues.
+- Build an interactive Power BI dashboard.
 
 ## Technology Stack
-- **Python:** Data cleaning and preprocessing using pandas.
+- **Python:** pandas-based data cleaning and preprocessing.
 - **PostgreSQL:** Data storage and querying.
-- **SQL:** Aggregation, analytical queries, and views.
-- **Power BI:** Interactive data visualisation and dashboard reporting.
+- **SQL:** Analytical queries, views, aggregations, and data-quality checks.
+- **Power BI:** Interactive dashboards and visual reporting.
 
-## Project Workflow
-1. Collected public Canadian government contract history data.
-2. Cleaned and prepared the dataset using Python.
-3. Loaded the cleaned data into PostgreSQL.
-4. Created SQL queries and analytical views.
-5. Built a Power BI dashboard to present the findings.
+## Workflow
+1. Prepare the source dataset using Python.
+2. Export cleaned data and a data-quality report.
+3. Load the prepared data into PostgreSQL.
+4. Create analytical views and SQL queries.
+5. Validate data quality and explore contract-level metrics.
+6. Visualise findings in Power BI.
 
-## Dashboard Insights
-The dashboard includes:
+## Dashboard
+The Power BI report includes:
 - Top 10 suppliers by recorded contract value.
-- Recorded contract value by procurement category.
-- Recorded contract value by procurement method.
-- Recorded contract value by award year.
-- Zero-value contract count.
+- Recorded value by procurement category.
+- Recorded value by procurement method.
+- Recorded value by award year.
+- Unique-contract and source-record KPIs.
+- Zero-value contract KPI.
+- A contract-level data-quality/detail page.
 
-## Data Quality
-The project includes data cleaning, missing-value handling, standardisation of supplier names, and data quality reporting.
+## Validation Results
+Validated against the PostgreSQL `contract_level` view:
+- **Unique contracts:** 3,942
+- **Zero-value contracts:** 1,114
+- **Missing contract values:** 0
+- **Total reported contract value:** CAD 11,069,228,132.20
 
-## Important Note
-The values shown represent recorded contract values in the source dataset. They should not automatically be interpreted as actual cash expenditure. Contract history records may include multiple records for the same contract.
+These are dataset-level results and may change if the source data or cleaning logic changes.
+
+## Data Quality Notes
+The project includes duplicate checks, missing-value checks, date-range checks, and value validation. Repeated source records may represent different categories or components of the same contract, so they should not automatically be treated as duplicates.
 
 ## Project Structure
 ```text
 ContractScope Lite/
 ├── data/
-│   ├── raw/
-│   └── processed/
-├── reports/
-├── sql/
-├── src/
+│   ├── raw/                 # Source dataset (excluded from Git)
+│   └── processed/           # Cleaned dataset and quality report
+├── reports/                 # Data-quality findings
+├── sql/                     # Analytics views and SQL checks
+├── src/                     # Python cleaning and loading scripts
 ├── README.md
 ├── requirements.txt
-└── ContractScope_Lite.pbix
-```
-
-## How to Run
-1. Install the required Python packages listed in `requirements.txt`.
-2. Run the data cleaning script in `src/clean_data.py`.
-3. Configure PostgreSQL and the database connection.
-4. Run `src/load_data.py` to load the prepared data.
-5. Execute the SQL scripts in the `sql/` directory.
-6. Open `ContractScope_Lite.pbix` in Power BI Desktop.
-
-## Disclaimer
-This project is intended for educational and portfolio purposes. Findings depend on the completeness and definitions of the source data.
+└── .gitignore

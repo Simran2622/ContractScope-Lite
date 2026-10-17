@@ -1,4 +1,4 @@
-
+﻿
 from pathlib import Path
 import pandas as pd
 
@@ -83,3 +83,4 @@ print(f"Output columns: {len(clean.columns)}")
 print(f"Supplier names unavailable: {(clean['supplier'] == 'Unknown').sum():,}")
 print(f"Saved cleaned data to: {OUTPUT_DIR}")
 print(f"Saved quality report to: {OUTPUT_DIR / 'data_quality_report.csv'}")
+

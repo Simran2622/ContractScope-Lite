@@ -1,4 +1,4 @@
-
+﻿
 from pathlib import Path
 import os
 import pandas as pd
@@ -57,4 +57,5 @@ with psycopg.connect(DATABASE_URL) as conn:
         cur.executemany(insert_sql, records)
 
 print(f"Loaded {len(df):,} records into PostgreSQL.")
+
 
